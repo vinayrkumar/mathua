@@ -4,16 +4,28 @@
   "steps": [
     {
       "fact": "b",
-      "say": "The formula works on ax² + bx + c = 0; here a = 1, b = [[b]] and c = [[c]]."
+      "say": "The formula works on ax\u00b2 + bx + c = 0; here a = 1, b = [[b]] and c = [[c]]."
     },
     {
       "fact": "disc",
-      "say": "Under the square root goes b² − 4ac, which is [[b2]] − [[four_c]] = [[disc]]."
+      "say": "Under the square root goes b\u00b2 \u2212 4ac, which is [[b2]] \u2212 [[four_c]] = [[disc]]."
     },
     {
-      "fact": "r1",
-      "say": "With ± that gives the two roots [[r1]] and [[r2]]."
+      "fact": "sqrtdisc",
+      "say": "So the square root is \u221a[[disc]] = [[sqrtdisc]]."
+    },
+    {
+      "fact": "negb",
+      "say": "Substituting into x = (\u2212b \u00b1 \u221a(b\u00b2 \u2212 4ac)) \u00f7 2a gives x = ([[negb]] \u00b1 [[sqrtdisc]]) \u00f7 [[twicea]]."
+    },
+    {
+      "fact": "plus_num",
+      "say": "With the plus sign: ([[negb]] + [[sqrtdisc]]) \u00f7 [[twicea]] = [[plus_num]] \u00f7 [[twicea]] = [[plus_root]]."
+    },
+    {
+      "fact": "minus_num",
+      "say": "With the minus sign: ([[negb]] \u2212 [[sqrtdisc]]) \u00f7 [[twicea]] = [[minus_num]] \u00f7 [[twicea]] = [[minus_root]]."
     }
   ],
-  "answer": "So the solutions are [[r1]] and [[r2]]."
+  "answer": "So the two solutions are [[plus_root]] and [[minus_root]]."
 }

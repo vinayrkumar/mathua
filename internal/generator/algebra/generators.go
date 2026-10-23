@@ -152,7 +152,7 @@ func (g *slopeInterceptGen) Generate(ctx generator.GeneratorContext) generator.P
 			Question:    fmt.Sprintf("Write the equation of a line with slope \\(%d/%d\\) and \\(y\\)-intercept %d (\\(y = mx + b\\)).", m, n, b),
 			Answer:      fmt.Sprintf("y = (%d/%d)x + %d", m, n, b),
 			Explanation: fmt.Sprintf("\\(y = \\frac{%d}{%d}x + %d\\)", m, n, b),
-			Facts:       map[string]string{"m_num": strconv.Itoa(m), "m_den": strconv.Itoa(n), "b": strconv.Itoa(b), "which": "fraction"},
+			Facts:       map[string]string{"m_num": strconv.Itoa(m), "m_den": strconv.Itoa(n), "b": strconv.Itoa(b), "which": "fraction", "equation": fmt.Sprintf("y = (%d/%d)x + %d", m, n, b)},
 		}
 	}
 	m := rand.Intn(int(1+ctx.Difficulty*5)) + 1
@@ -164,7 +164,7 @@ func (g *slopeInterceptGen) Generate(ctx generator.GeneratorContext) generator.P
 		Question:    fmt.Sprintf("Write the equation of a line with slope %d and \\(y\\)-intercept %d (\\(y = mx + b\\)).", m, b),
 		Answer:      formatLinear(m, b),
 		Explanation: fmt.Sprintf("\\(y = %dx + %d\\)", m, b),
-		Facts:       map[string]string{"m_num": strconv.Itoa(m), "m_den": "1", "b": strconv.Itoa(b), "which": "integer"},
+		Facts:       map[string]string{"m_num": strconv.Itoa(m), "m_den": "1", "b": strconv.Itoa(b), "which": "integer", "equation": formatLinear(m, b)},
 	}
 }
 
@@ -660,7 +660,7 @@ func (g *quadFormulaGen) Generate(ctx generator.GeneratorContext) generator.Prob
 		Question:    fmt.Sprintf("Solve using quadratic formula: %s = 0", q),
 		Answer:      fmt.Sprintf("%d,%d", r1, r2),
 		Explanation: fmt.Sprintf("\\(x = \\frac{%d \\pm \\sqrt{%d - 4(%d)}}{2} = %d\\) or %d", b, b*b, c, r1, r2),
-		Facts:       map[string]string{"q": q, "b": strconv.Itoa(b), "c": strconv.Itoa(c), "b2": strconv.Itoa(b * b), "four_c": strconv.Itoa(4 * c), "disc": strconv.Itoa(b*b - 4*c), "r1": strconv.Itoa(r1), "r2": strconv.Itoa(r2)},
+		Facts:       map[string]string{"q": q, "b": strconv.Itoa(b), "c": strconv.Itoa(c), "b2": strconv.Itoa(b * b), "four_c": strconv.Itoa(4 * c), "disc": strconv.Itoa(b*b - 4*c), "sqrtdisc": strconv.Itoa(max(r1-r2, r2-r1)), "negb": strconv.Itoa(-b), "twicea": "2", "plus_num": strconv.Itoa(-b + max(r1-r2, r2-r1)), "minus_num": strconv.Itoa(-b - max(r1-r2, r2-r1)), "plus_root": strconv.Itoa((-b + max(r1-r2, r2-r1)) / 2), "minus_root": strconv.Itoa((-b - max(r1-r2, r2-r1)) / 2), "r1": strconv.Itoa(r1), "r2": strconv.Itoa(r2)},
 	}
 }
 

@@ -1,19 +1,19 @@
 {
   "concept": "arith.add.carry",
-  "setup": "You are adding [[a]] and [[b]], and the ones digits force a carry.",
+  "setup": "You are adding [[a]] and [[b]] in columns, and the ones digits force a carry.",
   "steps": [
     {
       "fact": "ones_a",
-      "say": "The ones digits are [[ones_a]] and [[ones_b]]. Together they make [[ones_a]] + [[ones_b]], which is 10 or more — this is the carry case."
+      "say": "Ones column: [[ones_a]] + [[ones_b]] = [[ones_sum]]."
     },
     {
-      "fact": "sum",
-      "say": "Write the ones digit of the total in the ones column and carry the ten leftwards, adding it to the tens column."
+      "fact": "ones_digit",
+      "say": "[[ones_sum]] is 10 or more, so write [[ones_digit]] in the ones column and carry 1 ten."
     },
     {
-      "fact": "sum",
-      "say": "That gives [[sum]]."
+      "fact": "tens_sum",
+      "say": "Tens column: [[tens_a]] + [[tens_b]], plus the 1 carried, gives [[tens_sum]] tens, which is [[tens_value]]."
     }
   ],
-  "answer": "The carry is what makes this more than a digit-by-digit sum: [[a]] + [[b]] = [[sum]]."
+  "answer": "Now add the parts: [[tens_value]] + [[ones_digit]] = [[sum]]."
 }

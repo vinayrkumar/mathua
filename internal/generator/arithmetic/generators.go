@@ -106,7 +106,7 @@ func (g *addGen) Generate(ctx generator.GeneratorContext) generator.Problem {
 		Question:    fmt.Sprintf("\\(%d + %d = ?\\)", a, b),
 		Answer:      fmt.Sprintf("%d", a+b),
 		Explanation: fmt.Sprintf("Given %d + %d. Step 1: start at %d. Step 2: count up %d → %d. Answer: %d", a, b, a, b, a+b, a+b),
-		Facts:       map[string]string{"a": strconv.Itoa(a), "b": strconv.Itoa(b), "sum": strconv.Itoa(a + b), "ones_a": strconv.Itoa(a % 10), "ones_b": strconv.Itoa(b % 10)},
+		Facts:       map[string]string{"a": strconv.Itoa(a), "b": strconv.Itoa(b), "sum": strconv.Itoa(a + b), "ones_a": strconv.Itoa(a % 10), "ones_b": strconv.Itoa(b % 10), "ones_sum": strconv.Itoa(a%10 + b%10), "ones_digit": strconv.Itoa((a + b) % 10), "tens_a": strconv.Itoa(a / 10 % 10), "tens_b": strconv.Itoa(b / 10 % 10), "tens_sum": strconv.Itoa(a/10%10 + b/10%10 + 1), "tens_value": strconv.Itoa((a/10%10 + b/10%10 + 1) * 10)},
 	}
 }
 
